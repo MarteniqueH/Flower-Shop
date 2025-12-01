@@ -1,0 +1,32 @@
+
+body{
+background-color: #FFF1F0;
+
+}
+
+h1, h3{
+
+text-align: center;
+color: #5B4A4A;
+
+}
+
+h3{
+text-align: center;
+color: #F28AB2;
+
+}
+
+.btn {
+
+background-color :  #f49ac2;
+color: white;
+font-weight: bold;
+border: none;
+}
+
+.btn:hover{
+
+background-color: #F28AB2;
+
+}

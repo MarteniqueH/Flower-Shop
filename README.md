@@ -24,3 +24,25 @@ For this project, you will use the Integrated Development Environment (IDE) link
 If you need additional support, please navigate to the course page and reach out to your course instructor.
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+
+# Flower Shop Inventory
+
+## Part C - Customize HTML UI 
+- Prompt : Customize the HTML UI for your customer's application 
+- File: src/main/resources/templates/mainscreen.html
+  - Line 14: Changed <title> to "My Flower Shop"
+  - Line 19: Updated <h1> to "Blooms All Around"
+  - Line 20: Added <h2> that says "Flower Shop"
+  - Line 22: Changed <h2> to "Gift Additions"
+  - Lines 29-36: Added unordered list with 5 gift items
+  - Line 63: Changed <h2> to "Floral Arrangements"
+  - Lines 72-78: Added unordered list with 5 flower items
+  - Line 14: Added link to CSS stylesheet
+  - Line 21: Added "About Us"
+
+- File: src/main/resources/static/css/demo.css
+  - Lines 2-5: Changed body background color to pink
+  - Lines 7-12: Centered <h1> and <h3> text, changed text color
+  - Lines 14-18: Centered <h3> text and changed text color
+  - Lines 20-32: Styled buttons with pink background, white text and added bold font weight 
+  - 

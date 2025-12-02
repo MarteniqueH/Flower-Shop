@@ -25,7 +25,7 @@ If you need additional support, please navigate to the course page and reach out
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
 
-# Flower Shop Inventory
+# Flower Shop 
 
 ## Part C - Customize HTML UI 
 - Prompt : Customize the HTML UI for your customer's application 
@@ -45,4 +45,20 @@ Take this opportunity to create or add to a simple resume portfolio to highlight
   - Lines 7-12: Centered <h1> and <h3> text, changed text color
   - Lines 14-18: Centered <h3> text and changed text color
   - Lines 20-32: Styled buttons with pink background, white text and added bold font weight 
-  - 
+
+## Part D - Add "About" page 
+- Prompt: Add an "About" page to describe your customer's company and include navigation to and from
+- File: src/main/resources/templates/about.html
+  - Created new HTML file about.html for the About Us page
+  - Line 6: Linked demo.css stylesheet for styling
+  - Line 8: Added <h1> header with text “About”
+  - Line 9: Added <a> link to navigate back to main screen (/home)
+
+- File: src/main/resources/templates/mainscreen.html
+  - Line 22: Linked "About Us" text to about.html so users can navigate from main screen to About page
+
+- File: src/main/java/com/example/demo/controllers/AboutController.java
+  - Line 7: Created new controller class AboutController
+  - Line 9: Added @Controller annotation
+  - Line 12: Added displayMain() method mapped to /home to return mainscreen.html
+  - Line 17: Added displayAbout() method mapped to /about to return about.html

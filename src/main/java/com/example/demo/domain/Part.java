@@ -16,13 +16,14 @@ import java.util.Set;
  */
 @Entity
 @ValidDeletePart
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "part_type", discriminatorType = DiscriminatorType.STRING)
 @Table(name="Parts")
 public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+    @Column(unique = true)
     String name;
     @Min(value = 0, message = "Price value must be positive")
     double price;
@@ -108,3 +109,4 @@ public abstract class Part implements Serializable {
         return (int) (id ^ (id >>> 32));
     }
 }
+

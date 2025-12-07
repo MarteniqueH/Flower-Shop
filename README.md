@@ -39,13 +39,33 @@ Take this opportunity to create or add to a simple resume portfolio to highlight
   - Lines 72-78: Added unordered list with 5 flower items
   - Line 14: Added link to CSS stylesheet
   - Line 21: Added "About Us"
-
+  - Lines 75-105: Updated unordered list of floral arrangements to include images and names
+  
 - File: src/main/resources/static/css/demo.css
   - Lines 2-5: Changed body background color to pink
   - Lines 7-12: Centered <h1> and <h3> text, changed text color
   - Lines 14-18: Centered <h3> text and changed text color
   - Lines 20-32: Styled buttons with pink background, white text and added bold font weight 
-
+- Lines 34–40: .products-offered
+  - Made the product list a horizontal layout.
+  - Removed bullets, padding, and margin.
+  -  Evenly spaced items across row.
+    - Lines 42–44: .single-item
+      -   Centered content inside each product item.
+      - Assigned fixed width (18%) for uniform sizing.
+    Lines 49-55: .single-items img
+          - Images fill the container width and have fixed height.
+          - Used object-fit: cover to prevent distortion.
+          - Added 10px pink border around each image.
+          - Small margin below the image for spacing.
+            - Lines 60–62: #productkeyword
+              - Added bottom margin 20px for spacing.
+            - Lines65–72: .img-name
+                - Centered product names under images.
+                - Bold, 20px font, brown color (#5B4A4A).
+                - Added slight top padding.
+            - Lines 77–79: .single-items:hover
+                - Added hover effect:  pink background when user hovers over an item.
 ## Part D - Add "About" page 
 - Prompt: Add an "About" page to describe your customer's company and include navigation to and from
 - File: src/main/resources/templates/about.html
@@ -62,3 +82,7 @@ Take this opportunity to create or add to a simple resume portfolio to highlight
   - Line 9: Added @Controller annotation
   - Line 12: Added displayMain() method mapped to /home to return mainscreen.html
   - Line 17: Added displayAbout() method mapped to /about to return about.html
+
+## Part E - Adding Sample inventory for chosen store 
+ - Line 53 - 86 Creates and adds all outsource parts to the store and ensures each part is unique  
+ - Line 94 - 122 Creates and adds all products to the store and sets their inventory and price amounts 

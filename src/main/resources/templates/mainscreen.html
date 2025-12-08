@@ -19,7 +19,7 @@
 <div class="container">
     <h1>Blooms All Around</h1>
         <h3>Flower Shop</h3>
-    <a href="/about">About Us</a>
+    <a href="/about" class="btn btn-primary btn-sm mb-3">About Us</a>
     <hr>
     <h2>Gift Additions</h2>
     <form th:action="@{/mainscreen}">
@@ -28,14 +28,33 @@
         <input type="submit" value="Search" />
         &nbsp;
         <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
-        <ul>
-            <li>Chocolate Box</li>
-
-            <li>Greeting Cards</li>
-            <li>Stuffed Teddy Bears
+        <ul class="products-offered">
+            <li class="single-items">
+                <img src="images/chocolate-box.jpg" alt="Box of assorted chocolate candy"  >
+                <p class ="img-name">Chocolate Box</p>
             </li>
-            <li>Scented Candles </li>
-            <li>Gift Ribbon Pack</li>
+            <li class = "single-items">
+                <img src = "images/greeting-card.jpg" alt ="Blank greeting card with brown envlope" >
+                <p class = "img-name">Greeting Card</p>
+            </li>
+            <li class = "single-items">
+                <img src = "images/teddy-bear.jpg" alt="Brown teddy Bear" >
+                <p class = "img-name">Teddy Bear</p>
+            </li>
+            <li class = "single-items">
+
+                <img src = "images/scented-candle.jpg" alt = "Single scented candle" >
+                <p class = "img-name" >Scented Candle</p>
+
+
+            </li>
+            <li class = "single-items">
+                <img src = "images/gift-ribbon.jpg" alt = "Red gift ribbon" >
+                <p class = "img-name" >Gift Ribbon</p>
+
+
+            </li>
+
         </ul>
 
     </form>
@@ -126,7 +145,7 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
+                <a th:href="@{/buyProduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to purchase this product?')))return false">Buy Now</a>
 
 

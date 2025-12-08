@@ -41,56 +41,56 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-// Determinse if the partRepository already has any parts in it
+        // Determine if the partRepository already has any parts in it
         if(partRepository.count()>0 || productRepository.count()>0 || outsourcedPartRepository.count()>0) {
-
             return;
         }
+
         // A set to keep track of the part names that have already been used to avoid duplicate names
-      Set<String> usedPartNames = new HashSet<>();
+        Set<String> usedPartNames = new HashSet<>();
 
         // Creation of Outsourced Parts
-      OutsourcedPart chocolateBox = new OutsourcedPart();
-      chocolateBox.setName(getUniqueName("Chocolate Box", usedPartNames));
-      chocolateBox.setInv(25);
-      chocolateBox.setPrice(15.00);
-      chocolateBox.setCompanyName("Chocolate Factory");
-      partRepository.save(chocolateBox);
+        OutsourcedPart chocolateBox = new OutsourcedPart();
+        chocolateBox.setName(getUniqueName("Chocolate Box", usedPartNames));
+        chocolateBox.setInv(25);
+        chocolateBox.setPrice(15.00);
+        chocolateBox.setCompanyName("Chocolate Factory");
+        partRepository.save(chocolateBox);
 
-      OutsourcedPart greetingCard = new OutsourcedPart();
-      greetingCard.setName(getUniqueName("Greeting Card", usedPartNames));
-      greetingCard.setInv(15);
-      greetingCard.setPrice(5.00);
-      greetingCard.setCompanyName("Cards For ALL");
-      partRepository.save(greetingCard);
+        OutsourcedPart greetingCard = new OutsourcedPart();
+        greetingCard.setName(getUniqueName("Greeting Card", usedPartNames));
+        greetingCard.setInv(15);
+        greetingCard.setPrice(5.00);
+        greetingCard.setCompanyName("Cards For ALL");
+        partRepository.save(greetingCard);
 
-      OutsourcedPart stuffTeddyBear = new OutsourcedPart();
-      stuffTeddyBear.setName(getUniqueName("Teddy Bear",usedPartNames));
-      stuffTeddyBear.setInv(25);
-      stuffTeddyBear.setPrice(20.00);
-      stuffTeddyBear.setCompanyName("Build a Teddy");
-      partRepository.save(stuffTeddyBear);
+        OutsourcedPart stuffTeddyBear = new OutsourcedPart();
+        stuffTeddyBear.setName(getUniqueName("Teddy Bear",usedPartNames));
+        stuffTeddyBear.setInv(25);
+        stuffTeddyBear.setPrice(20.00);
+        stuffTeddyBear.setCompanyName("Build a Teddy");
+        partRepository.save(stuffTeddyBear);
 
-      OutsourcedPart scentedCandle = new OutsourcedPart();
-      scentedCandle.setName(getUniqueName("Scented Candle",usedPartNames));
-      scentedCandle.setInv(30);
-      scentedCandle.setPrice(10.00);
-      scentedCandle.setCompanyName("Smell the WICK");
-      partRepository.save(scentedCandle);
+        OutsourcedPart scentedCandle = new OutsourcedPart();
+        scentedCandle.setName(getUniqueName("Scented Candle",usedPartNames));
+        scentedCandle.setInv(30);
+        scentedCandle.setPrice(10.00);
+        scentedCandle.setCompanyName("Smell the WICK");
+        partRepository.save(scentedCandle);
 
-      OutsourcedPart giftRibbon = new OutsourcedPart();
-      giftRibbon.setName(getUniqueName("Gift Ribbon", usedPartNames));
-      giftRibbon.setInv(100);
-      giftRibbon.setPrice(5.00);
-      giftRibbon.setCompanyName("Tie The Knot");
-      partRepository.save(giftRibbon);
+        OutsourcedPart giftRibbon = new OutsourcedPart();
+        giftRibbon.setName(getUniqueName("Gift Ribbon", usedPartNames));
+        giftRibbon.setInv(100);
+        giftRibbon.setPrice(5.00);
+        giftRibbon.setCompanyName("Tie The Knot");
+        partRepository.save(giftRibbon);
 
-      List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        // Creation of Products
+
         Product roseBouquet = new Product();
         roseBouquet.setName("Rose Bouquet");
         roseBouquet.setPrice(60.00);
@@ -122,12 +122,33 @@ public class BootStrapData implements CommandLineRunner {
         productRepository.save(sunflowers);
 
 
+        stuffTeddyBear.getProducts().add(roseBouquet);
+        scentedCandle.getProducts().add(roseBouquet);
+
+        greetingCard.getProducts().add(tulips);
+        chocolateBox.getProducts().add(tulips);
+
+        stuffTeddyBear.getProducts().add(hydrangeas);
+        giftRibbon.getProducts().add(hydrangeas);
+
+        stuffTeddyBear.getProducts().add(lilies);
+        chocolateBox.getProducts().add(lilies);
+
+        greetingCard.getProducts().add(sunflowers);
+        scentedCandle.getProducts().add(sunflowers);
+
+
+        partRepository.save(chocolateBox);
+        partRepository.save(greetingCard);
+        partRepository.save(stuffTeddyBear);
+        partRepository.save(scentedCandle);
+        partRepository.save(giftRibbon);
+
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
         System.out.println(productRepository.findAll());
         System.out.println("Number of Parts"+partRepository.count());
         System.out.println(partRepository.findAll());
-
     }
     // Helper method to ensure unique names
 private String getUniqueName(String startingName, Set<String> usedNames) {

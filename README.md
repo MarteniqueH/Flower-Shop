@@ -40,6 +40,7 @@ Take this opportunity to create or add to a simple resume portfolio to highlight
   - Line 14: Added link to CSS stylesheet
   - Line 21: Added "About Us"
   - Lines 75-105: Updated unordered list of floral arrangements to include images and names
+  - Added Images 
   
 - File: src/main/resources/static/css/demo.css
   - Lines 2-5: Changed body background color to pink
@@ -84,5 +85,24 @@ Take this opportunity to create or add to a simple resume portfolio to highlight
   - Line 17: Added displayAbout() method mapped to /about to return about.html
 
 ## Part E - Adding Sample inventory for chosen store 
+File: src/main/java/com/example/demo/bootstrap/BootStrapData.java
  - Line 53 - 86 Creates and adds all outsource parts to the store and ensures each part is unique  
  - Line 94 - 122 Creates and adds all products to the store and sets their inventory and price amounts 
+
+## Part F - Implementing "Buy Now" button with required funtion
+File : src/main/resources/templates/mainscreen.html
+- Line 148 - 149 
+- Handles GET request to /buyProduct with productId as parameter
+- Fetches th e product from the database using product Repositiory 
+- Returns "error" if the product is less than 1 in the inventory 
+- If the product is avalible, the product inventory will decrease by 1 and save the update inventory value.
+- Returns "success" view upon successful purchase 
+
+File: src/main/java/com/example/demo/controllers/BuyProductController.java
+- Line 1 - 44  Created a Buy Product Controller
+
+File : src/main/resources/templates/error.html
+- Line: 1 - 16 "Purchase Failed!" message with a button to return to the home page
+
+File : src/main/resources/templates/success.html
+- Line: 1 - 16  "Purchase Successful!" message with a button to return to the home page

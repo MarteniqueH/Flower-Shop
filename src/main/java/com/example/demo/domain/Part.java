@@ -33,6 +33,7 @@ public abstract class Part implements Serializable {
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
             inverseJoinColumns=@JoinColumn(name="product_id"))
+
     Set<Product> products= new HashSet<>();
 
     public Part() {

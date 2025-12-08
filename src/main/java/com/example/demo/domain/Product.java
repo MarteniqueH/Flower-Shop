@@ -104,4 +104,27 @@ public class Product implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+    public   boolean productPurchase(){
+
+        if (this.inv >= 1) {
+            for( Part part: this.parts){
+                if (part.getInv() < 1){
+                    return false;
+                }
+            }
+            this.inv = this.inv - 1;
+            for(Part part: this.parts){
+
+                part.setInv(part.getInv() - 1);
+            }
+            return true;
+
+
+        }else{
+
+            return false;
+        }
+    }
 }
+

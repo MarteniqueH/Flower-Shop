@@ -126,7 +126,14 @@ File: src/main/java/com/example/demo/controllers/AddOutsourcedPartController.jav
 Lines 44-47: Added validation to enforce inventory is between minimum and maximum values
 
 ## Part H - Add validation for between or at the maximum and minimum fields. 
+File: src/main/java/com/example/demo/controllers/AddInhousePartController.java
+Lines 44-54: Added validation to display error messages when inventory is below minimum or above maximum when adding parts
 
+File: src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java
+Lines 44-54 Added validation to display error messages when inventory is below minimum or above maximum when adding parts
+
+File: src/main/java/com/example/demo/controllers/BuyProductController.java
+Lines36-41: Added validation to check if buying a product will lower part inventory below minimum.
 
 
 ## Part I - Added two test for the maximum and minimum fields to the PartTest class in the test Package 

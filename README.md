@@ -106,3 +106,30 @@ File : src/main/resources/templates/error.html
 
 File : src/main/resources/templates/success.html
 - Line: 1 - 16  "Purchase Successful!" message with a button to return to the home page
+
+
+## Part G - Modify the parts to track maximum and minimum inventory
+File : src/main/java/com/example/demo/domain/Part.java
+Lines 34-36, 53-54, 96-100, 103-104  Added additional fields to the part entity for maximum and minimum inventory.
+File: com/example/demo/bootstrap/BootStrapData.java
+Lines 58-59, 67-68, 76-77, 85-86, 94-95 Added min and max inventory values for each outsourced part
+
+File: src/main/resources/templates/InhousePartForm.html
+File: src/main/resources/templates/OutsourcedPartForm.html
+Lines 24 - 25, 25- 26 Added two new input (Min Inventory & Max Inventory) fields for both forms InhousePartForm.html and OutsourcedPartForm.html
+
+Renamed Application.Properties to Floral Arrangements Product Data
+File: src/main/java/com/example/demo/controllers/AddInhousePartController.java
+Lines 44-47: Added validation to enforce inventory is between minimum and maximum values
+
+File: src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java
+Lines 44-47: Added validation to enforce inventory is between minimum and maximum values
+
+## Part H - Add validation for between or at the maximum and minimum fields. 
+
+
+
+## Part I - Added two test for the maximum and minimum fields to the PartTest class in the test Package 
+
+## Part J - Remove the class files for unsued validators for clean code 
+

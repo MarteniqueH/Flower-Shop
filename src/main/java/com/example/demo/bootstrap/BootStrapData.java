@@ -55,6 +55,8 @@ public class BootStrapData implements CommandLineRunner {
         chocolateBox.setInv(25);
         chocolateBox.setPrice(15.00);
         chocolateBox.setCompanyName("Chocolate Factory");
+        chocolateBox.setMinInventory(1);
+        chocolateBox.setMaxInventory(100);
         partRepository.save(chocolateBox);
 
         OutsourcedPart greetingCard = new OutsourcedPart();
@@ -62,6 +64,8 @@ public class BootStrapData implements CommandLineRunner {
         greetingCard.setInv(15);
         greetingCard.setPrice(5.00);
         greetingCard.setCompanyName("Cards For ALL");
+        greetingCard.setMinInventory(1);
+        greetingCard.setMaxInventory(100);
         partRepository.save(greetingCard);
 
         OutsourcedPart stuffTeddyBear = new OutsourcedPart();
@@ -69,6 +73,8 @@ public class BootStrapData implements CommandLineRunner {
         stuffTeddyBear.setInv(25);
         stuffTeddyBear.setPrice(20.00);
         stuffTeddyBear.setCompanyName("Build a Teddy");
+        stuffTeddyBear.setMinInventory(1);
+        stuffTeddyBear.setMaxInventory(100);
         partRepository.save(stuffTeddyBear);
 
         OutsourcedPart scentedCandle = new OutsourcedPart();
@@ -76,6 +82,8 @@ public class BootStrapData implements CommandLineRunner {
         scentedCandle.setInv(30);
         scentedCandle.setPrice(10.00);
         scentedCandle.setCompanyName("Smell the WICK");
+        scentedCandle.setMinInventory(1);
+        scentedCandle.setMaxInventory(100);
         partRepository.save(scentedCandle);
 
         OutsourcedPart giftRibbon = new OutsourcedPart();
@@ -83,6 +91,8 @@ public class BootStrapData implements CommandLineRunner {
         giftRibbon.setInv(100);
         giftRibbon.setPrice(5.00);
         giftRibbon.setCompanyName("Tie The Knot");
+        giftRibbon.setMinInventory(1);
+        giftRibbon.setMaxInventory(100);
         partRepository.save(giftRibbon);
 
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();

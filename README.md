@@ -141,4 +141,3 @@ File: src/test/java/com/example/demo/domain/PartTest.java
 Lines 159-172: Added two unit tests (getMinInventory and getMaxInventory) to test the minimum and maximum inventory fields for both InhousePart and OutsourcedPart
 
 ## Part J - Remove the class files for unsued validators for clean code 
-

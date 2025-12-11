@@ -140,4 +140,8 @@ Lines36-41: Added validation to check if buying a product will lower part invent
 File: src/test/java/com/example/demo/domain/PartTest.java 
 Lines 159-172: Added two unit tests (getMinInventory and getMaxInventory) to test the minimum and maximum inventory fields for both InhousePart and OutsourcedPart
 
-## Part J - Remove the class files for unsued validators for clean code 
+## Part J - Remove the class files for unsued validators for clean code
+src/main/java/com/example/demo/validators/DeletePartValidator.java (deleted entire file)
+- src/main/java/com/example/demo/validators/ValidDeletePart.java (deleted entire file)
+- src/main/java/com/example/demo/domain/Part.java (removed @ValidDeletePart annotation)
+  Change: Removed unused validator class files and their corresponding annotation interface.
